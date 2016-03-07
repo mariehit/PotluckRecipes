@@ -30,4 +30,11 @@ public class Tag {
 	public void setText(String text) {
 		this.text = text;
 	}
+	
+	@Override
+	public String toString() {
+		String string = new String();
+		string = "id: " +id +" Tag: "+ text;
+		return string;
+	}
 }
