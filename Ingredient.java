@@ -43,6 +43,10 @@ public class Ingredient {
 		this.measurement = measurement;
 	}
 	
-	
-
+	@Override
+	public String toString() {
+		String string = new String();
+		string = "Id: " +id + " Name: " +name + " Measurement: " +measurement;
+		return string;
+	}
 }
