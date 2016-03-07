@@ -23,7 +23,7 @@ public class Ingredient {
 		this.measurement = measurement;
 	}
 
-	public int getId() {
+	public int getIngredientId() {
 		return id;
 	}
 
