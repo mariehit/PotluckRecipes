@@ -1,5 +1,5 @@
 /**
- * Tag class 
+ * Ingredient class 
  * Potluck recipe project
  * CST 8288
  * March 7, 2016
