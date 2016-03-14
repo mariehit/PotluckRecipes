@@ -15,7 +15,7 @@ public class Tag {
 		text = new String();
 	}
 	
-	public Tag(int id, String text) {
+	public Tag(String text) {
 		id = id++;
 		this.text = text;
 	}

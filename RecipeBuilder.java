@@ -37,12 +37,12 @@ public class RecipeBuilder {
 		return this;
 	}
 	
-	public RecipeBuilder setComments(ArrayList<Comments> comments) {
+	public RecipeBuilder setComments(ArrayList<Comment> comments) {
 		this.comments = comments;
 		return this;
 	}
 	
-	public RecipeBuilder setTags(ArrayList<Tags> tags) {
+	public RecipeBuilder setTags(ArrayList<Tag> tags) {
 		this.tags = tags;
 		return this;
 	}

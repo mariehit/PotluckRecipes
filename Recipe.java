@@ -8,7 +8,7 @@ public class Recipe {
 	private ArrayList<Ingredient> ingredients;
 	private ArrayList<Comment> comments;
 	private ArrayList<Tag> tags;
-	private Category category;
+	//private Category category;
 	
 	public Recipe(RecipeBuilder builder) {
 		recipe_id = builder.getRecipeID();
@@ -17,7 +17,7 @@ public class Recipe {
 		ingredients = builder.getIngredients();
 		comments = builder.getComments();
 		tags = builder.getTags();
-		category = builder.getCategory();
+		//category = builder.getCategory();
 	}
 	
 	public int getRecipe_id() {
@@ -44,9 +44,9 @@ public class Recipe {
 		return tags;
 	}
 
-	public Category getCategory() {
-		return category;
-	}
+	//public Category getCategory() {
+		//return category;
+	//}
 
 	
 	
