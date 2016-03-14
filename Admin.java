@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 public class Admin implements MemberInfo {
-	public void comment() 
+	public void comment(int index, String Comment) 
 	{
-		
+		//recipes.get(index - 1).addComment(comment);
 	}
 
 	public Recipe createRecipe(String directions, String attribution, ArrayList<Ingredient> ingredients, ArrayList<Tag> tags)
@@ -12,9 +12,9 @@ public class Admin implements MemberInfo {
 				.setIngredients(ingredients).setTags(tags).setCategory(null).build();
 	}
 
-	public void deleteComment() 
+	public void deleteComment(int index, int commentIndex) 
 	{
-		
+		recipes.get(index).getComments().remove(commentIndex);
 	}
 
 	public void deleteRecipe(int index) 
@@ -22,14 +22,14 @@ public class Admin implements MemberInfo {
 		recipes.remove(index - 1);
 	}
 
-	public void viewComment() 
+	public void viewComment(int index, int commentIndex) 
 	{
-		//recipe.getComment();
+		recipes.get(index - 1).getComments().get(commentIndex).toString();
 	}
 
-	public void viewRecipe() 
+	public void viewRecipe(int index) 
 	{
-		//recipe.toString();
+		recipes.get(index - 1).toString();
 	}
 
 	public String accountBehaviour() 

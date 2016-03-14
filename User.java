@@ -10,9 +10,9 @@ public class User
 		this.memberInfo = new NormalUser();
 	}
 	
-	public void comment()
+	public void comment(int index, String comment)
 	{
-		this.memberInfo.comment();
+		this.memberInfo.comment(index, comment);
 	}
 	
 	public Recipe createRecipe(String directions, String attribution, ArrayList<Ingredient> ingredients, ArrayList<Tag> tags)
@@ -22,9 +22,9 @@ public class User
 		return(this.memberInfo.createRecipe(directions, attribution, ingredients, tags));
 	}
 	
-	public void deleteComment()
+	public void deleteComment(int index, int commentIndex)
 	{
-		this.memberInfo.deleteComment();
+		this.memberInfo.deleteComment(index, commentIndex);
 	}
 	
 	public void deleteRecipe(int index)
@@ -32,14 +32,14 @@ public class User
 		this.memberInfo.deleteRecipe(index);
 	}
 	
-	public void viewComment()
+	public void viewComment(int index, int commentIndex)
 	{
-		this.memberInfo.viewComment();
+		this.memberInfo.viewComment(index, commentIndex);
 	}
 	
-	public void viewRecipe()
+	public void viewRecipe(int index)
 	{
-		this.memberInfo.viewRecipe();
+		this.memberInfo.viewRecipe(index);
 	}
 	
 	
