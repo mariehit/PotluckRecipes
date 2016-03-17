@@ -1,3 +1,4 @@
+package potluck.domain;
 
 /**
  * Launcher class 
@@ -12,31 +13,42 @@ import java.util.Scanner;
 
 public class Launcher {
 	
-	static ArrayList<Recipe> recipes = RecipeList.recipeList.getInstance().recipes;
+//	static ArrayList<Recipe> recipes = RecipeList.recipeList.getInstance().recipes;
 	
 	enum Launch {
 		INSTANCE;		
 		
-		int id = 0;
-		String directions;
-		String attribution;
-		ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>();
-		ArrayList<Tag> tags = new ArrayList<Tag>();
+//		int id = 0;
+//		String directions;
+//		String attribution;
+//		ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>();
+//		ArrayList<Tag> tags = new ArrayList<Tag>();
 		//Category category = null;
-		
-		User user = new User();
+		Controller controller;
+//		User user = new User();
 
 		public void mainMenu() 
 		{
 			Scanner input = new Scanner(System.in);
+			Scanner keyboard = new Scanner(System.in);
 			int choice = 0;
+			String username;
+			String password;
 			System.out.println("1. Login" + "\n2. Logout" + "\n3. Quit program");
 			choice = input.nextInt();
 			switch (choice) {
 			case 1:
+				System.out.print("Username: ");
+				username = input.next();
+				System.out.print("Password: ");
+				password = keyboard.next();
+				controller = new Controller(username, password);
+				System.out.println("Login successful!");
 				secondMenu();
 				break;
 			case 2:
+				controller = new Controller(null,null);
+				System.out.println("Logged out successfully.");
 				break;
 			case 3:
 				break;
@@ -50,61 +62,66 @@ public class Launcher {
 			int choice = 0;
 
 			do {
-				System.out.println("1.Add recipe" + "\n2.View recipe" + "\n3. Delete recipe" + "\n4. Search recipe");
+				System.out.println("1. Add recipe" + "\n2. View recipe" + "\n3. Delete recipe" + "\n4. Search recipe");
 				choice = input.nextInt();
 				input.nextLine();
+				String directions;
+				String attribution;
+				String ingredientName;
+				String ingredientAmount;
+				ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>(10);
+				ArrayList<Tag> tags = new ArrayList<Tag>(10);
 				switch (choice) {
 				case 1:
 					String prompt = null;
 
 					do {
 						System.out.println("Enter an ingredient");
-						String ingredientName = input.nextLine();
+						ingredientName = input.nextLine();
 						System.out.println("Enter the amount");
-						String ingredientAmount = input.nextLine();
-						ingredients.add(new Ingredient(ingredientName, ingredientAmount));
+						ingredientAmount = input.nextLine();
+						ingredients.add(new Ingredient(ingredientName,ingredientAmount));
+						controller.addIngredients(ingredients);
 						System.out.println("Add more ingredients? Y/N");
 						prompt = input.nextLine();
 					} while (!prompt.equalsIgnoreCase("n"));
 
 					System.out.println("Enter the directions");
 					directions = input.nextLine();
+					controller.addDirections(directions);
 
 					System.out.println("Enter the attribution");
 					attribution = input.nextLine();
+					controller.addAttribution(attribution);
 
 					do {
 						System.out.println("Enter a tag");
 						String tag = input.nextLine();
 						tags.add(new Tag(tag));
+						controller.addTags(tags);
 						System.out.println("Add more tags? Y/N");
 						prompt = input.nextLine();
 					} while (!prompt.equalsIgnoreCase("n"));
 
-					recipes.add(user.createRecipe(directions, attribution, ingredients, tags));
-
+//					recipes.add(user.createRecipe(directions, attribution, ingredients, tags));
+					controller.createRecipePrepare();
+					controller.createRecipe();
 					break;
 				case 2:
+					int index = 0;
+					System.out.print("Enter recipe index: ");
+					index = input.nextInt();
+					controller.viewRecipe(index);
 					break;
 				case 3:
-					if (recipes.size() == 0) {
-						System.out.println("No recipes to delete");
-					} else {
-						System.out.println("Which recipe to delete?");
-						for (int i = 0; i < recipes.size(); i++) {
-							System.out.print(i + 1);
-						}
-						System.out.print("\n");
-						user.deleteRecipe(input.nextInt());
-						input.nextLine();
-					}
+					
 					break;
 				case 4:
 					break;
 				default:
 					break;
 				}
-			} while (recipes.size() < 5);
+			} while (true);
 		}
 		
 		public static Launch getInstance()
