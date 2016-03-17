@@ -12,15 +12,33 @@ public class Recipe {
 	private Category category;
 	private static int idHelper = 0;
 	
-	public void display() {
-		System.out.println("test");
+	public void display() 
+	{
 		System.out.println(recipe_id);
-		if (directions != null) { System.out.println(directions); }
-		if (attribution != null) { System.out.println(attribution); }
-		if (ingredients != null) { System.out.println(ingredients); }	
-		if (comments != null) { System.out.println(comments); }
-		if (tags != null) { System.out.println(tags); }
-		if (category != null) { System.out.println(category); }
+		if (ingredients != null) 
+		{ 
+			for(int i = 0; i < ingredients.size(); i++)
+			{
+				ingredients.get(i).display();
+			} 
+		}	
+		if (directions != null) { System.out.println("directions: " + directions); }
+		if (attribution != null) { System.out.println("attribution: " + attribution); }		
+		if (comments != null)
+		{ 
+			for(int i = 0; i < comments.size(); i++)
+			{
+				comments.get(i).display();
+			} 
+		}
+		if (tags != null)
+		{ 
+			for(int i = 0; i < tags.size(); i++)
+			{
+				tags.get(i).display();
+			} 
+		}
+		if (category != null) { category.display(); }
 	}
 	
 	public Recipe(RecipeBuilder builder) {

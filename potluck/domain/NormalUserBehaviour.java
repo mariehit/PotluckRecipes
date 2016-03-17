@@ -49,20 +49,18 @@ public class NormalUserBehaviour implements UserBehaviour{
 
 	@Override
 	public void deleteComment(int index) {
-		// TODO Auto-generated method stub
-		
+		System.out.println("You do not have the proper rights to do this");		
 	}
 
 	@Override
 	public void deleteRecipe(int index) {
-		// TODO Auto-generated method stub
-		
+		System.out.println("You do not have the proper rights to do this");		
 	}
 
 	@Override
 	public String userBehaviour() {
 		// TODO Auto-generated method stub
-		return null;
+		return "normal user";
 	}
 	
 	

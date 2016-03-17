@@ -14,4 +14,20 @@ public class Category {
 	public int getCategory_id() {
 		return category_id;
 	}
+	
+	public void display()
+	{
+		if(categoryName == CategoryName.BAKERY)
+		{
+			System.out.println("Category: bakery");
+		}
+		if(categoryName == CategoryName.MEAT)
+		{
+			System.out.println("Category: meat");
+		}
+		if(categoryName == CategoryName.VEGE)
+		{
+			System.out.println("Category: vegie");
+		}
+	}
 }

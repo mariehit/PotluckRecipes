@@ -32,4 +32,9 @@ public class Tag {
 		string = "Id: " +id +" Tag: "+ text;
 		return string;
 	}
+	
+	public void display()
+	{
+		System.out.println(toString());
+	}
 }

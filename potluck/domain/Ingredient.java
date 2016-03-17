@@ -48,7 +48,12 @@ public class Ingredient {
 	@Override
 	public String toString() {
 		String string = new String();
-		string = "Id: " +id + " Name: " +name + " Measurement: " +measurement;
+		string = "Id: " +id + " Name: " +name + " Measurement: " +measurement + "\n";
 		return string;
+	}
+	
+	public void display()
+	{
+		System.out.println(toString());
 	}
 }

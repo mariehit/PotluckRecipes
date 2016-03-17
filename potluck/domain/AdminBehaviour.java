@@ -6,7 +6,7 @@ public class AdminBehaviour extends NormalUserBehaviour implements UserBehaviour
 
 
 	@Override
-	public void deleteComment() {
+	public void deleteComment(int index) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -20,7 +20,7 @@ public class AdminBehaviour extends NormalUserBehaviour implements UserBehaviour
 	@Override
 	public String userBehaviour() {
 		// TODO Auto-generated method stub
-		return null;
+		return "admin";
 	}
 
 }

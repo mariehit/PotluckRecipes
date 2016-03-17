@@ -42,7 +42,14 @@ public class Controller {
 	}
 	
 	public void viewRecipe(int index) {
-		user.viewRecipe(index);
+		if(index > RecipeDB.RECIPE_DB.getRecipeList().size() || index < 0)
+		{
+			System.out.println("Error! Error! Error! Err!");
+		}
+		else
+		{
+			user.viewRecipe(index);
+		}
 	}
 	
 	public void comment(Comment comment, int index) {

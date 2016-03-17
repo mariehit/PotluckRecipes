@@ -9,7 +9,7 @@ package potluck.domain;
 public class Comment {
 
 	private int commentId;
-	private float rank;
+	private short rank;
 	private String dateCreated;
 	private String comment;
 	private static int idHelper = 0;
@@ -19,7 +19,7 @@ public class Comment {
 		dateCreated =  new String();
 	}
 	
-	public Comment(String comment, float rank, String dateCreated){
+	public Comment(String comment, short rank, String dateCreated){
 		this.commentId = ++idHelper;
 		this.comment = comment;
 		this.rank = rank;
@@ -38,7 +38,7 @@ public class Comment {
 		return dateCreated;
 	}
 	
-	public void setRank(float rank){
+	public void setRank(short rank){
 		this.rank = rank;
 	}
 	
@@ -57,10 +57,20 @@ public class Comment {
 	@Override
 	public String toString(){
 		StringBuilder sb = new StringBuilder();
+		sb.append(commentId);
+		sb.append(" ");
 		sb.append(comment);
+		sb.append(" ");
 		sb.append(rank);
+		sb.append(" ");
 		sb.append(dateCreated);
+		sb.append(" ");
 		return sb.toString();
 		
+	}
+	
+	public void display()
+	{
+		System.out.println(toString());
 	}
 }
