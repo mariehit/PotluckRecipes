@@ -64,5 +64,9 @@ public class Controller {
 		}
 	}
 	
+	public LoginUser getUser() {
+		return user;
+	}
+	
 	
 }
