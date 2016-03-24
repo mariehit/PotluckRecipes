@@ -11,13 +11,31 @@ package potluck.domain;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/*
+ * displays the menus the user will see
+ */
 public class Launcher {
-
+	
+//	static ArrayList<Recipe> recipes = RecipeList.recipeList.getInstance().recipes;
+	
+	/*
+	 * creates a singleton of the launcher
+	 */
 	enum Launch {
 		INSTANCE;		
-
+		
+//		int id = 0;
+//		String directions;
+//		String attribution;
+//		ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>();
+//		ArrayList<Tag> tags = new ArrayList<Tag>();
+		//Category category = null;
 		Controller controller;
+//		User user = new User();
 
+		/*
+		 * displays the menu that first appears on screen
+		 */
 		public void mainMenu() 
 		{
 			Scanner input = new Scanner(System.in);
@@ -42,16 +60,20 @@ public class Launcher {
 				System.out.println("Logged out successfully.");
 				break;
 			case 3:
-				System.out.println("Quitting the program...");
 				break;
 			default:
 				break;
 			}
 		}
 
+		/*
+		 * displays a second menu that is navigated to
+		 * by the user
+		 */
 		public void secondMenu() {
 			Scanner input = new Scanner(System.in);
 			int choice = 0;
+
 			do {
 				System.out.println("1. Add recipe" + "\n2. View recipe" + "\n3. Delete recipe" + "\n4. Search recipe");
 				choice = input.nextInt();
@@ -60,7 +82,6 @@ public class Launcher {
 				String attribution;
 				String ingredientName;
 				String ingredientAmount;
-				int index;
 				ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>(10);
 				ArrayList<Tag> tags = new ArrayList<Tag>(10);
 				switch (choice) {
@@ -95,21 +116,18 @@ public class Launcher {
 						prompt = input.nextLine();
 					} while (!prompt.equalsIgnoreCase("n"));
 
-					//					recipes.add(user.createRecipe(directions, attribution, ingredients, tags));
+//					recipes.add(user.createRecipe(directions, attribution, ingredients, tags));
 					controller.createRecipePrepare();
 					controller.createRecipe();
 					break;
 				case 2:
-					index = 0;
+					int index = 0;
 					System.out.print("Enter recipe index: ");
 					index = input.nextInt();
 					controller.viewRecipe(index);
 					break;
 				case 3:
-					index = 0;
-					System.out.print("Enter recipe index: ");
-					index = input.nextInt();
-					controller.deleteRecipe(index);
+					
 					break;
 				case 4:
 					break;
@@ -118,14 +136,20 @@ public class Launcher {
 				}
 			} while (true);
 		}
-
+		
+		/*
+		 * returns an instance of the singleton
+		 */
 		public static Launch getInstance()
 		{
 			return INSTANCE;
 		}
 
 	}
-
+	
+	/*
+	 * the entry point to the program
+	 */
 	public static void main(String args[])
 	{
 		Launch launcher = Launch.getInstance();
