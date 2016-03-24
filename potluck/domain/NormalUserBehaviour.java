@@ -2,7 +2,14 @@ package potluck.domain;
 
 import java.util.ArrayList;
 
+/*
+ * part of the delegate that defines the
+ * functionality of a normal user
+ */
 public class NormalUserBehaviour implements UserBehaviour{
+	/*
+	 * 
+	 */
 	@Override
 	public void createRecipePrepare(RecipeBuilder builder) {
 		builder = RecipeBuilder.create();

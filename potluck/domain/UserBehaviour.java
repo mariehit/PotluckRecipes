@@ -1,7 +1,10 @@
 package potluck.domain;
 
 import java.util.ArrayList;
-
+/*
+ * the interface used to define all the functions
+ * that must be implemented
+ */
 public interface UserBehaviour {
 
 	void createRecipe(RecipeBuilder builder);

@@ -11,10 +11,16 @@ package potluck.domain;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/*
+ * displays the menus the user will see
+ */
 public class Launcher {
 	
 //	static ArrayList<Recipe> recipes = RecipeList.recipeList.getInstance().recipes;
 	
+	/*
+	 * creates a singleton of the launcher
+	 */
 	enum Launch {
 		INSTANCE;		
 		
@@ -27,6 +33,9 @@ public class Launcher {
 		Controller controller;
 //		User user = new User();
 
+		/*
+		 * displays the menu that first appears on screen
+		 */
 		public void mainMenu() 
 		{
 			Scanner input = new Scanner(System.in);
@@ -57,6 +66,10 @@ public class Launcher {
 			}
 		}
 
+		/*
+		 * displays a second menu that is navigated to
+		 * by the user
+		 */
 		public void secondMenu() {
 			Scanner input = new Scanner(System.in);
 			int choice = 0;
@@ -124,6 +137,9 @@ public class Launcher {
 			} while (true);
 		}
 		
+		/*
+		 * returns an instance of the singleton
+		 */
 		public static Launch getInstance()
 		{
 			return INSTANCE;
@@ -131,6 +147,9 @@ public class Launcher {
 
 	}
 	
+	/*
+	 * the entry point to the program
+	 */
 	public static void main(String args[])
 	{
 		Launch launcher = Launch.getInstance();

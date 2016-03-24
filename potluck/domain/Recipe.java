@@ -2,6 +2,9 @@ package potluck.domain;
 
 import java.util.ArrayList;
 
+/*
+ * holds information for recipes
+ */
 public class Recipe {
 	private int recipe_id;
 	private String directions;
@@ -12,6 +15,9 @@ public class Recipe {
 	private Category category;
 	private static int idHelper = 0;
 	
+	/*
+	 * displays the information in recipe
+	 */
 	public void display() 
 	{
 		System.out.println(recipe_id);
@@ -41,6 +47,9 @@ public class Recipe {
 		if (category != null) { category.display(); }
 	}
 	
+	/*
+	 * constructor for recipe
+	 */
 	public Recipe(RecipeBuilder builder) {
 		recipe_id = ++idHelper;
 		directions = builder.getDirections();
@@ -50,35 +59,58 @@ public class Recipe {
 		tags = builder.getTags();
 		category = builder.getCategory();
 	}
-	
+	/*
+	 * returns the recipeID
+	 */
 	public int getRecipe_id() {
 		return recipe_id;
 	}
 
+	/*
+	 * reutnrs the directions
+	 */
 	public String getDirections() {
 		return directions;
 	}
 
+	/*
+	 * returns the attribution
+	 */
 	public String getAttribution() {
 		return attribution;
 	}
 
+	/*
+	 * returns an arrayList of ingredients
+	 */
 	public ArrayList<Ingredient> getIngredients() {
 		return ingredients;
 	}
 
+	/*
+	 * returns the arrayList of comments
+	 */
 	public ArrayList<Comment> getComments() {
 		return comments;
 	}
 
+	/*
+	 * returns the arrayList of tags
+	 */
 	public ArrayList<Tag> getTags() {
 		return tags;
 	}
 
+	/*
+	 * returns the category
+	 */
 	public Category getCategory() {
 		return category;
 	}
 	
+	/*
+	 * adds comments to the comments arrayList
+	 */
 	public void setComment(Comment comment) {
 		comments.add(comment);
 	}
