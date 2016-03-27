@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>376</x>
+      <y>0</y>
+      <w>328</w>
+      <h>328</h>
+    </coordinates>
+    <panel_attributes>RecipeBuilder
+--
+-recipe_id:int
+-directions:String
+-attribution:String
+-ingredients:ArrayList&lt;Ingredient&gt;
+-comments:ArrayList&lt;Comment&gt;
+-tags:ArrayList&lt;Tag&gt;
+-category:Category
+--
+-RecipeBuilder()
+_+create():RecipeBuilder_
++setDirections(directions:String):RecipeBuilder
++SetAttibution(attribution:String):RecipeBuilder
++setIngredients(ingredients:ArrayList&lt;Ingredient&gt;):RecipeBuilder
++setComments(comments:ArrayList&lt;Comment&gt;):RecipeBuilder
++setTags(tags:ArrayList&lt;Tag&gt;):RecipeBuilder
++setCategory(Category):RecipeBuilder
++build():Recipe
++getRecipeID():int
++getComments():ArrayList&lt;Comment&gt;
++getTags():ArrayList&lt;Tag&gt;
++getDirections():String
++getAttributions():String
++getIngredients():ArrayList&lt;Ingredient&gt;
++getCategory():Category</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>448</x>
+      <y>320</y>
+      <w>24</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>376</x>
+      <y>384</y>
+      <w>296</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>Recipe
+--
+-recipe_id:int
+-directions:String
+-attribution:String
+_-idHelper:int_
+--
++display():void
++Recipe(builder:RecipeBuilder)
++getRecipe_id():int
++getDirections():String
++getAttributions():String
++getIngredients():ArrayList&lt;Ingredient&gt;
++getComments():ArrayList&lt;Comment&gt;
++getTags():ArrayList&lt;Tag&gt;
++getCategory():Category
++setComment(comment:Comment):void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>632</y>
+      <w>208</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Category
+--
+-category_id:int
+-categoryName:CategoryName
+--
++Category(category:CategoryName)
++getCategoryName():CategoryName
++getCategory_id():int
++display():void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>264</x>
+      <y>696</y>
+      <w>304</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>Comment
+--
+-commentId:int
+-rank:float
+-dateCreated:String
+-comment:String
+_-idHelper:int_
+--
++Comment()
++Comment(comment:String, rank:short, dateCreated:String)
++getCommentId():int
++setDateCreated(dateCreated:String):void
++getDateCreated():String
++setRank(rank:float):void
++getRank():float
++setComment(comment:String):void
++getComment():String
++toString():String
++display():void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>584</x>
+      <y>696</y>
+      <w>208</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>Ingredient
+--
+-id:int
+-name:String
+-measurement:String
+_-idHelper:int_
+--
++Ingredient()
++Ingredient(name:String, measurement:String)
++getIngrdeinId():int
++getName():String
++setName(name:String):void
++getMeasurement():String
++setMeasurement(measurement:String):void
++toString():String
++display():void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>816</x>
+      <y>696</y>
+      <w>168</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>Tag
+--
+-id:int
+-text:String
+_-idHelper:int_
+--
++Tag()
++Tag(text:String)
++getTagId():int
++getText():String
++setText(text:String):void
++toString():String
++display():void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>56</x>
+      <y>840</y>
+      <w>168</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enumeration&gt;&gt;
+CategoryName
+--
+MEAT
+VEGE
+BAKERY
+--
++CategoryName()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>152</x>
+      <y>488</y>
+      <w>240</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;&gt;&gt;&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;180.0;280.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>352</x>
+      <y>568</y>
+      <w>104</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>568</y>
+      <w>272</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;320.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>568</y>
+      <w>120</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>136</x>
+      <y>744</y>
+      <w>24</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>800</x>
+      <y>416</y>
+      <w>168</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enumeration&gt;&gt;
+RecipeDB
+--
+RECIPE_DB
+--
++RecipeDB()
++addRecipe(recipe:Recipe):void
++getRecipeList():ArrayList&lt;Recipe&gt;
++deleteRecipe(index:int):void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>664</x>
+      <y>464</y>
+      <w>152</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>136</x>
+      <y>32</y>
+      <w>80</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>152</x>
+      <y>48</y>
+      <w>136</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Class diagram of add-recipe feature for potluck program
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
