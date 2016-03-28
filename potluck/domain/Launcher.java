@@ -15,23 +15,23 @@ import java.util.Scanner;
  * displays the menus the user will see
  */
 public class Launcher {
-	
-//	static ArrayList<Recipe> recipes = RecipeList.recipeList.getInstance().recipes;
-	
+
+	//	static ArrayList<Recipe> recipes = RecipeList.recipeList.getInstance().recipes;
+
 	/*
 	 * creates a singleton of the launcher
 	 */
 	enum Launch {
 		INSTANCE;		
-		
-//		int id = 0;
-//		String directions;
-//		String attribution;
-//		ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>();
-//		ArrayList<Tag> tags = new ArrayList<Tag>();
+
+		//		int id = 0;
+		//		String directions;
+		//		String attribution;
+		//		ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>();
+		//		ArrayList<Tag> tags = new ArrayList<Tag>();
 		//Category category = null;
 		Controller controller;
-//		User user = new User();
+		//		User user = new User();
 
 		/*
 		 * displays the menu that first appears on screen
@@ -51,13 +51,18 @@ public class Launcher {
 				username = input.next();
 				System.out.print("Password: ");
 				password = keyboard.next();
-				controller = new Controller(username, password);
-				System.out.println("Login successful!");
-				secondMenu();
+				controller = new Controller();
+				if (controller.loginController(username, password)) {
+					System.out.println("Login successfully");
+					secondMenu();
+				}
+				else {
+					System.out.println("Wrong usename, password");
+				}
+
 				break;
 			case 2:
-				controller = new Controller(null,null);
-				System.out.println("Logged out successfully.");
+				controller = null;
 				break;
 			case 3:
 				break;
@@ -116,8 +121,35 @@ public class Launcher {
 						prompt = input.nextLine();
 					} while (!prompt.equalsIgnoreCase("n"));
 
-//					recipes.add(user.createRecipe(directions, attribution, ingredients, tags));
-					controller.createRecipePrepare();
+					//					recipes.add(user.createRecipe(directions, attribution, ingredients, tags));
+					//controller.createRecipePrepare();
+					int categoryChoice = 0;
+					do{
+						System.out.println("Choose a category: ");
+						System.out.println("1. Meat");
+						System.out.println("2. Veggie");
+						System.out.println("3. Bakery");
+						categoryChoice = input.nextInt();
+						switch(categoryChoice) {
+						case 1:
+							controller.addCategory(new Category(CategoryName.MEAT));
+							break;
+						case 2:
+							controller.addCategory(new Category(CategoryName.VEGGIE));
+
+							break;
+						case 3:
+							controller.addCategory(new Category(CategoryName.BAKERY));
+
+							break;
+						default:
+							System.out.println("Invalid choice. Please choose again");
+							categoryChoice = 0;
+							break;
+						}
+
+					}while(categoryChoice == 0);
+
 					controller.createRecipe();
 					break;
 				case 2:
@@ -127,7 +159,7 @@ public class Launcher {
 					controller.viewRecipe(index);
 					break;
 				case 3:
-					
+
 					break;
 				case 4:
 					break;
@@ -136,7 +168,7 @@ public class Launcher {
 				}
 			} while (true);
 		}
-		
+
 		/*
 		 * returns an instance of the singleton
 		 */
@@ -146,7 +178,7 @@ public class Launcher {
 		}
 
 	}
-	
+
 	/*
 	 * the entry point to the program
 	 */

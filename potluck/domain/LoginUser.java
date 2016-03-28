@@ -110,6 +110,9 @@ public class LoginUser {
 		this.password = password;
 	}
 
+	public RecipeBuilder getRecipeBuilder() {
+		return builder;
+	}
 
 
 }

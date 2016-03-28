@@ -38,7 +38,7 @@ public class Category {
 		{
 			System.out.println("Category: meat");
 		}
-		if(categoryName == CategoryName.VEGE)
+		if(categoryName == CategoryName.VEGGIE)
 		{
 			System.out.println("Category: vegie");
 		}

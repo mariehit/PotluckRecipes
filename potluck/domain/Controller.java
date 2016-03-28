@@ -12,14 +12,15 @@ public class Controller {
 	/*
 	 * constructor to set up the user
 	 */
-	public Controller(String username, String password) {
+	public boolean loginController(String username, String password) {
 		for (LoginUser x: UserDB.USER_DB.getUserList()) {
 			if (x.getUsername().equalsIgnoreCase(username) 
 					&& x.getPassword().equalsIgnoreCase(password)) {
 				user = x;
-				break;
+				return true;
 			}
 		}
+		return false;
 	}
 	
 	/*

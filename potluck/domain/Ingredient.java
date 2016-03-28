@@ -77,7 +77,7 @@ public class Ingredient {
 	@Override
 	public String toString() {
 		String string = new String();
-		string = "Id: " +id + " Name: " +name + " Measurement: " +measurement + "\n";
+		string = "Ingredient Name: " +name + " Measurement: " +measurement + "\n";
 		return string;
 	}
 	

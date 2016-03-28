@@ -10,7 +10,7 @@ import potluck.domain.Category;
 import potluck.domain.CategoryName;
 
 public class TestCategory {
-	Category category;
+	private Category category;
 	@Before
 	public void setUp() throws Exception {
 		category = new Category(CategoryName.BAKERY);

@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 import potluck.domain.Ingredient;
 
 public class TestIngredient {
-	Ingredient ingredient;
+	private Ingredient ingredient;
 
 	@Before
 	public void setUp() throws Exception {

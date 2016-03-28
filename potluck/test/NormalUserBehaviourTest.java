@@ -49,7 +49,7 @@ public class NormalUserBehaviourTest {
 		comments = new ArrayList<Comment>();
 		tags = new ArrayList<Tag>();	
 		ingredient = new Ingredient("Water","2 cups");
-		comment = new Comment("Test Comment", 5.0f, "2016-03-27");
+		comment = new Comment("Test Comment", (short)5, "2016-03-27");
 		tag = new Tag("Test tag");
 		category = new Category(CategoryName.BAKERY);
 		ingredients.add(ingredient);

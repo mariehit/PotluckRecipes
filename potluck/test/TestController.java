@@ -17,11 +17,12 @@ import potluck.domain.RecipeDB;
 import potluck.domain.Tag;
 
 public class TestController {
-	Controller controller;
+	private Controller controller;
 
 	@Before
 	public void setUp() throws Exception {
-		controller = new Controller("marie", "000000");
+		controller = new Controller();
+		controller.loginController("marie", "000000");
 	}
 
 	@After

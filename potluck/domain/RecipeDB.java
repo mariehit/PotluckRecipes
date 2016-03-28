@@ -30,4 +30,8 @@ public enum RecipeDB{
 	public final void deleteRecipe(int index) {
 		recipeList.remove(index);
 	}
+	
+	public final void setRecipeList(ArrayList<Recipe> recipeList) {
+		this.recipeList = recipeList;
+	}
 }

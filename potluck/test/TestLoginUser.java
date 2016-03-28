@@ -18,7 +18,7 @@ import potluck.domain.RecipeDB;
 import potluck.domain.Tag;
 
 public class TestLoginUser {
-	LoginUser user;
+	private LoginUser user;
 
 	@Before
 	public void setUp() throws Exception {

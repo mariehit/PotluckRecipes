@@ -47,14 +47,6 @@ public class TagTest {
 		assertEquals(test,tag.getText());
 	}
 
-	/**
-	 * Test method for {@link potluck.domain.Tag#getTagId()}.
-	 */
-	@Test
-	public final void testGetTagId() {
-		final int id = 3;
-		assertEquals(id,tag.getTagId());
-	}
 
 	/**
 	 * Test method for {@link potluck.domain.Tag#getText()}.
@@ -80,9 +72,9 @@ public class TagTest {
 	 */
 	@Test
 	public final void testToString() {
-		final int id = 4;
+
 		final String text = "Test";
-		final String string = "Id: " +id +" Tag: "+ text;
+		final String string = " Tag: "+ text;
 		assertEquals(string,tag.toString());
 	}
 

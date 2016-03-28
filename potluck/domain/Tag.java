@@ -50,7 +50,7 @@ public class Tag {
 	@Override
 	public String toString() {
 		String string = new String();
-		string = "Id: " +id +" Tag: "+ text;
+		string = " Tag: "+ text;
 		return string;
 	}
 	
