@@ -136,11 +136,9 @@ public class Launcher {
 							break;
 						case 2:
 							controller.addCategory(new Category(CategoryName.VEGGIE));
-
 							break;
 						case 3:
 							controller.addCategory(new Category(CategoryName.BAKERY));
-
 							break;
 						default:
 							System.out.println("Invalid choice. Please choose again");
@@ -149,7 +147,6 @@ public class Launcher {
 						}
 
 					}while(categoryChoice == 0);
-
 					controller.createRecipe();
 					break;
 				case 2:
@@ -159,7 +156,6 @@ public class Launcher {
 					controller.viewRecipe(index);
 					break;
 				case 3:
-
 					break;
 				case 4:
 					break;
