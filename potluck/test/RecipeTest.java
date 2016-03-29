@@ -97,7 +97,7 @@ public class RecipeTest {
 	@Test
 	public final void testGetRecipe_id() {
 		final int id = 0;
-		assertEquals(id,builder.getRecipeID());
+		assertEquals(id,recipe.getRecipeID());
 	}
 
 	/**
@@ -106,7 +106,7 @@ public class RecipeTest {
 	@Test
 	public final void testGetDirections() {
 		final String directions = "Pour water";
-		assertEquals(directions,builder.getDirections());
+		assertEquals(directions,recipe.getDirections());
 	}
 
 	/**
@@ -115,7 +115,7 @@ public class RecipeTest {
 	@Test
 	public final void testGetAttribution() {
 		final String attribution = "Test";
-		assertEquals(attribution,builder.getAttribution());	}
+		assertEquals(attribution,recipe.getAttribution());	}
 
 	/**
 	 * Test method for {@link potluck.domain.Recipe#getIngredients()}.
@@ -124,7 +124,7 @@ public class RecipeTest {
 	public final void testGetIngredients() {
 		ArrayList<Ingredient> ingredientsTest = new ArrayList<Ingredient>();
 		ingredientsTest.add(ingredient);
-		assertEquals(ingredientsTest,builder.getIngredients());
+		assertEquals(ingredientsTest,recipe.getIngredients());
 	}
 
 	/**
@@ -134,7 +134,7 @@ public class RecipeTest {
 	public final void testGetComments() {
 		ArrayList<Comment> commentsTest = new ArrayList<Comment>();
 		commentsTest.add(comment);
-		assertEquals(commentsTest,builder.getComments());
+		assertEquals(commentsTest,recipe.getComments());
 	}
 
 	/**
@@ -144,7 +144,7 @@ public class RecipeTest {
 	public final void testGetTags() {
 		ArrayList<Tag> tagTest = new ArrayList<Tag>();
 		tagTest.add(tag);
-		assertEquals(tagTest,builder.getTags());	
+		assertEquals(tagTest,recipe.getTags());	
 	}
 
 	/**
@@ -152,7 +152,7 @@ public class RecipeTest {
 	 */
 	@Test
 	public final void testGetCategory() {
-		assertEquals(category,builder.getCategory());
+		assertEquals(category,recipe.getCategory());
 	}
 
 	/**
@@ -162,7 +162,7 @@ public class RecipeTest {
 	public final void testSetComment() {
 		ArrayList<Comment> commentsTest = new ArrayList<Comment>();
 		commentsTest.add(comment);
-		assertEquals(commentsTest,builder.getComments());
+		assertEquals(commentsTest,recipe.getComments());
 	}
 
 }
