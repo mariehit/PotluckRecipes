@@ -58,14 +58,16 @@ public class Launcher {
 					secondMenu();
 				}
 				else {
-					System.out.println("Wrong usename, password");
+					System.out.println("Wrong usename or password");
 				}
-
 				break;
 			case 2:
+				
 				controller = null;
 				break;
 			case 3:
+				System.out.println("Quitting program...");
+				System.exit(0);
 				break;
 			default:
 				break;
@@ -79,9 +81,8 @@ public class Launcher {
 		public void secondMenu() {
 			Scanner input = new Scanner(System.in);
 			int choice = 0;
-
 			do {
-				System.out.println("1. Add recipe" + "\n2. View recipe" + "\n3. Delete recipe" + "\n4. Search recipe");
+				System.out.println("1. Add recipe" + "\n2. View recipe" + "\n3. Delete recipe" + "\n4. Search recipe" +"\n5. Logout");
 				choice = input.nextInt();
 				input.nextLine();
 				String directions;
@@ -121,9 +122,6 @@ public class Launcher {
 						System.out.println("Add more tags? Y/N");
 						prompt = input.nextLine();
 					} while (!prompt.equalsIgnoreCase("n"));
-
-					//					recipes.add(user.createRecipe(directions, attribution, ingredients, tags));
-					//controller.createRecipePrepare();
 					int categoryChoice = 0;
 					do{
 						System.out.println("Choose a category: ");
@@ -160,6 +158,10 @@ public class Launcher {
 					break;
 				case 4:
 					break;
+				case 5:
+					System.out.println("Logging out...");
+					mainMenu();					
+					break;
 				default:
 					break;
 				}
@@ -187,7 +189,7 @@ public class Launcher {
 				launcher.mainMenu();
 			}
 			catch(InputMismatchException e) {
-				System.out.println("Input mismatch. Please enter only an integer for the menu.");
+				System.out.println("Please enter only an integer for the menu.");
 			}
 		}		while(true);
 
