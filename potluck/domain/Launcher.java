@@ -9,6 +9,7 @@ package potluck.domain;
  *
  */
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /*
@@ -181,13 +182,14 @@ public class Launcher {
 	public static void main(String args[])
 	{
 		do{
-		try {
-		Launch launcher = Launch.getInstance();
-		launcher.mainMenu();
-		}
-		catch(InputMismatchException e) {
-			System.out.println("Input mismatch. Please enter only an integer for the menu.");
-		}
-	}		while(true);
+			try {
+				Launch launcher = Launch.getInstance();
+				launcher.mainMenu();
+			}
+			catch(InputMismatchException e) {
+				System.out.println("Input mismatch. Please enter only an integer for the menu.");
+			}
+		}		while(true);
 
 	}
+}
