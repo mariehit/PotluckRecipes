@@ -5,8 +5,7 @@ package potluck.domain;
  * @author Johan Setyobudi
  *
  */
-/*
- */
+
 public class Tag {
 	private int id = 0;
 	private String text;

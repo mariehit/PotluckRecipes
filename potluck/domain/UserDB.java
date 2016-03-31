@@ -6,8 +6,7 @@ import java.util.ArrayList;
  * @author Marie
  *
  */
-/*
- */
+
 public enum UserDB {
 	/**
 	 * USER_DB
@@ -18,7 +17,7 @@ public enum UserDB {
 	 * User list
 	 */
 	private ArrayList<LoginUser> userList = new ArrayList<LoginUser>(); 
-	
+
 
 	/**
 	 * Default constructor

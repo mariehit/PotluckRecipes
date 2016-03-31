@@ -7,9 +7,7 @@ import java.util.ArrayList;
  * @author Robert Lin
  *
  */
-/*
 
- */
 public interface UserBehaviour {
 
 	/**
@@ -38,7 +36,7 @@ public interface UserBehaviour {
 	 * @param index
 	 */
 	void deleteRecipe(int index);
-	
+
 	/**
 	 * User behavior method to be overridden
 	 * @return
