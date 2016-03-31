@@ -19,20 +19,12 @@ public class Launcher {
 
 	//	static ArrayList<Recipe> recipes = RecipeList.recipeList.getInstance().recipes;
 
-	/*
+	/**
 	 * creates a singleton of the launcher
 	 */
 	enum Launch {
 		INSTANCE;		
-
-		//		int id = 0;
-		//		String directions;
-		//		String attribution;
-		//		ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>();
-		//		ArrayList<Tag> tags = new ArrayList<Tag>();
-		//Category category = null;
 		Controller controller;
-		//		User user = new User();
 
 		/*
 		 * displays the menu that first appears on screen
@@ -62,19 +54,20 @@ public class Launcher {
 				}
 				break;
 			case 2:
-				
 				controller = null;
+				mainMenu();
 				break;
 			case 3:
 				System.out.println("Quitting program...");
 				System.exit(0);
 				break;
 			default:
+				System.out.println("Invalid choice. Please choose again\n");
 				break;
 			}
 		}
 
-		/*
+		/**
 		 * displays a second menu that is navigated to
 		 * by the user
 		 */
@@ -82,13 +75,15 @@ public class Launcher {
 			Scanner input = new Scanner(System.in);
 			int choice = 0;
 			do {
-				System.out.println("1. Add recipe" + "\n2. View recipe" + "\n3. Delete recipe" + "\n4. Search recipe" +"\n5. Logout");
+				System.out.println("1. Add recipe" + "\n2. View recipe" + "\n3. Delete recipe" + "\n4. Add comment to recipe" +"\n5. Logout");
 				choice = input.nextInt();
 				input.nextLine();
 				String directions;
 				String attribution;
 				String ingredientName;
 				String ingredientAmount;
+				String comment;
+				int index = 0;
 				ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>(10);
 				ArrayList<Tag> tags = new ArrayList<Tag>(10);
 				switch (choice) {
@@ -149,20 +144,38 @@ public class Launcher {
 					controller.createRecipe();
 					break;
 				case 2:
-					int index = 0;
 					System.out.print("Enter recipe index: ");
 					index = input.nextInt();
 					controller.viewRecipe(index);
 					break;
 				case 3:
+					System.out.println("Enter recipe index to delete: ");
+					index = input.nextInt();
+					controller.deleteRecipe(index);
 					break;
 				case 4:
+					boolean addMore = false;
+					float stars = 0;
+					do{
+						System.out.println("Enter recipe index: ");
+						index = input.nextInt();
+						System.out.println("Enter a comment: ");
+						comment = input.nextLine();
+						System.out.println("Enter a rating: ");
+
+						stars = input.nextFloat();
+						controller.comment(new Comment(comment,(short)stars,java.time.LocalDate.now().toString()), index);
+						System.out.println("Add more comments? Y/N");						
+						prompt = input.nextLine();
+					} while (!prompt.equalsIgnoreCase("n"));
 					break;
 				case 5:
 					System.out.println("Logging out...");
+					controller = null;
 					mainMenu();					
 					break;
 				default:
+
 					break;
 				}
 			} while (true);
@@ -178,7 +191,7 @@ public class Launcher {
 
 	}
 
-	/*
+	/**
 	 * the entry point to the program
 	 */
 	public static void main(String args[])
@@ -189,7 +202,7 @@ public class Launcher {
 				launcher.mainMenu();
 			}
 			catch(InputMismatchException e) {
-				System.out.println("Please enter only an integer for the menu.");
+				System.out.println("Please enter only an integer for the menu.\n");
 			}
 		}		while(true);
 
