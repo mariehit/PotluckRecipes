@@ -105,10 +105,13 @@ public class Launcher {
 					directions = input.nextLine();
 					controller.addDirections(directions);
 
-					System.out.println("Enter the attribution");
-					attribution = input.nextLine();
-					controller.addAttribution(attribution);
-
+					System.out.println("Would you like to add attribution? Y/N");
+					prompt = input.nextLine();
+					if (!prompt.equalsIgnoreCase("n")) {
+						System.out.println("Enter the attribution");
+						attribution = input.nextLine();
+						controller.addAttribution(attribution);
+					}
 					do {
 						System.out.println("Enter a tag");
 						String tag = input.nextLine();
@@ -144,9 +147,13 @@ public class Launcher {
 					controller.createRecipe();
 					break;
 				case 2:
-					System.out.print("Enter recipe index: ");
-					index = input.nextInt();
-					controller.viewRecipe(index);
+					try {
+						System.out.print("Enter recipe index: ");
+						index = input.nextInt();
+						controller.viewRecipe(index); 
+					} catch(NullPointerException e) {
+						System.out.println("Recipe list is currently empty.");
+					}
 					break;
 				case 3:
 					System.out.println("Enter recipe index to delete: ");
@@ -160,12 +167,13 @@ public class Launcher {
 						System.out.println("Enter recipe index: ");
 						index = input.nextInt();
 						System.out.println("Enter a comment: ");
+						input.nextLine();
 						comment = input.nextLine();
-						System.out.println("Enter a rating: ");
-
+						System.out.println("Enter a rating: ");					
 						stars = input.nextFloat();
 						controller.comment(new Comment(comment,(short)stars,java.time.LocalDate.now().toString()), index);
-						System.out.println("Add more comments? Y/N");						
+						System.out.println("Add more comments? Y/N");
+						input.nextLine();
 						prompt = input.nextLine();
 					} while (!prompt.equalsIgnoreCase("n"));
 					break;
