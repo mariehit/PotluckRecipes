@@ -1,16 +1,27 @@
 package potluck.domain;
 
 import java.util.ArrayList;
+/**
+ * An enumerator class holding an arrayList of the possible users
+ * @author Marie
+ *
+ */
 /*
- * an enum holding an arrayList of the possible users
  */
 public enum UserDB {
+	/**
+	 * USER_DB
+	 */
 	USER_DB;
 
+	/**
+	 * User list
+	 */
 	private ArrayList<LoginUser> userList = new ArrayList<LoginUser>(); 
 	
-	/*
-	 * default constructor
+
+	/**
+	 * Default constructor
 	 */
 	private UserDB() {
 		userList.add(new LoginUser("Johan", "123456", false));//
@@ -20,7 +31,10 @@ public enum UserDB {
 	}
 
 	/*
-	 * returns the arrayList of possible users
+	 */
+	/**
+	 * Returns the arrayList of possible users
+	 * @return userList
 	 */
 	public ArrayList<LoginUser> getUserList() {
 		return userList;

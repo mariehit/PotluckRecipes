@@ -1,22 +1,47 @@
 package potluck.domain;
 
 import java.util.ArrayList;
-
-/*
- * holds information for recipes
+/**
+ * This class holds information for recipes
+ * @author Marie Zhang
+ *
  */
 public class Recipe {
+	/**
+	 * Recipe id
+	 */
 	private int recipe_id;
+	/**
+	 * Directions
+	 */
 	private String directions;
+	/**
+	 * Attribution
+	 */
 	private String attribution;
+	/**
+	 * Ingredients
+	 */
 	private ArrayList<Ingredient> ingredients;
-	private ArrayList<Comment> comments;
+	/**
+	 * Comments
+	 */
+	private ArrayList<Comment> comments = new ArrayList<>();
+	/**
+	 * Tags
+	 */
 	private ArrayList<Tag> tags;
+	/**
+	 * Category
+	 */
 	private Category category;
+	/**
+	 * Recipe ID Helper
+	 */
 	private static int idHelper = 0;
-	
-	/*
-	 * displays the information in recipe
+
+	/**
+	 * Displays the information in recipe
 	 */
 	public void display() 
 	{
@@ -46,70 +71,86 @@ public class Recipe {
 		}
 		if (category != null) { category.display(); }
 	}
-	
-	/*
-	 * constructor for recipe
+
+	/**
+	 * Constructor for recipe
+	 * @param builder
 	 */
 	public Recipe(RecipeBuilder builder) {
 		recipe_id = ++idHelper;
 		directions = builder.getDirections();
 		attribution = builder.getAttribution();
 		ingredients = builder.getIngredients();
-		comments = builder.getComments();
 		tags = builder.getTags();
 		category = builder.getCategory();
 	}
-	/*
-	 * returns the recipeID
+
+	/**
+	 * Returns the recipeID
+	 * @return recipe_ID
 	 */
 	public int getRecipe_id() {
 		return recipe_id;
 	}
 
-	/*
-	 * reutnrs the directions
+
+	/**
+	 * Returns the directions
+	 * @return directions
 	 */
 	public String getDirections() {
 		return directions;
 	}
 
-	/*
-	 * returns the attribution
+
+	/**
+	 * Returns the attribution
+	 * @return attribution
 	 */
 	public String getAttribution() {
 		return attribution;
 	}
 
-	/*
-	 * returns an arrayList of ingredients
+
+	/**
+	 * Returns an arrayList of ingredients
+	 * @return ingredients
 	 */
 	public ArrayList<Ingredient> getIngredients() {
 		return ingredients;
 	}
 
-	/*
+	
+	/**
 	 * returns the arrayList of comments
+	 * @return comments
 	 */
 	public ArrayList<Comment> getComments() {
 		return comments;
 	}
 
-	/*
-	 * returns the arrayList of tags
+	
+	/**
+	 * Returns the arrayList of tags
+	 * @return tags
 	 */
 	public ArrayList<Tag> getTags() {
 		return tags;
 	}
 
-	/*
-	 * returns the category
+
+	/**
+	 * Returns the category
+	 * @return category
 	 */
 	public Category getCategory() {
 		return category;
 	}
-	
-	/*
-	 * adds comments to the comments arrayList
+
+
+	/**
+	 * Adds comments to the comments arrayList
+	 * @param comment
 	 */
 	public void setComment(Comment comment) {
 		comments.add(comment);

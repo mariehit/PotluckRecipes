@@ -2,56 +2,95 @@ package potluck.domain;
 
 import java.util.ArrayList;
 
-/*
- * the builder to create a recipe
+/**
+ * This class is a builder to create a recipe
+ * @author Marie Zhang
+ *
  */
+
 public class RecipeBuilder {
+	/**
+	 * Recipe ID
+	 */
 	private int recipe_id;
+	/**
+	 * Direction
+	 */
 	private String directions;
+	/**
+	 * Attribution
+	 */
 	private String attribution;
+	/**
+	 * Ingredients
+	 */
 	private ArrayList<Ingredient> ingredients;
+	/**
+	 * Comments
+	 */
 	private ArrayList<Comment> comments;
+	/**
+	 * Tags
+	 */
 	private ArrayList<Tag> tags;
+	/**
+	 * Category
+	 */
 	private Category category;
 	
-	/*
-	 * default constructor
+	
+	/**
+	 * Default constructor(Empty)
 	 */
 	private RecipeBuilder(){}
 	
-	/*
-	 * returns a new recipeBuilder
+	
+	/**
+	 * Returns a new recipeBuilder
+	 * @return RecipeBuilder
 	 */
 	public static RecipeBuilder create() {
 		return new RecipeBuilder();
 	}
 	
-	/*
+	
+	/**
 	 * adds directions to the recipe being created
+	 * @param directions
+	 * @return directions
 	 */
 	public RecipeBuilder setDirections(String directions) {
 		this.directions = directions;
 		return this;
 	}
 	
-	/*
-	 * adds an attribution to the recipe being created
+	
+	/**
+	 * Adds an attribution to the recipe being created
+	 * @param attribution
+	 * @return attribution
 	 */
 	public RecipeBuilder setAttribution(String attribution) {
 		this.attribution = attribution;
 		return this;
 	}
 	
-	/*
-	 * adds ingredients to the recipe being created
+	
+	/**
+	 * Adds ingredients to the recipe being created
+	 * @param ingredients
+	 * @return ingredients
 	 */
 	public RecipeBuilder setIngredients(ArrayList<Ingredient> ingredients) {
 		this.ingredients = ingredients;
 		return this;
 	}
 	
-	/*
-	 * adds comments to the recipe being created
+	
+	/**
+	 * Adds comments to the recipe being created
+	 * @param comments
+	 * @return comments
 	 */
 	public RecipeBuilder setComments(ArrayList<Comment> comments) {
 		this.comments = comments;
@@ -59,15 +98,22 @@ public class RecipeBuilder {
 	}
 	
 	/*
-	 * adds tags to the recipe being created
+	 */
+	/**
+	 * Adds tags to the recipe being created
+	 * @param tags
+	 * @return tags
 	 */
 	public RecipeBuilder setTags(ArrayList<Tag> tags) {
 		this.tags = tags;
 		return this;
 	}
 	
-	/*
-	 * sets the category of the recipe being created
+	
+	/**
+	 * Sets the category of the recipe being created
+	 * @param category
+	 * @return category
 	 */
 	public RecipeBuilder setCategory(Category category) {
 		this.category = category;
@@ -75,56 +121,73 @@ public class RecipeBuilder {
 	}
 	
 	/*
-	 * builds the recipe being created
+	 */
+	/**
+	 * Builds the recipe being created
+	 * @return Recipe
 	 */
 	public Recipe build(){
 		return new Recipe(this);
 	}
 	
-	/*
-	 * returns the recipeID
+	
+	/**
+	 * Returns the recipeID
+	 * @return recipe_id
 	 */
 	public int getRecipeID() {
 		return recipe_id;
 	}
 
-	/*
-	 * reutnrs an arrayList of comments
+	
+	/**
+	 * Returns an arrayList of comments
+	 * @return comments
 	 */
 	public ArrayList<Comment> getComments() {
 		return comments;
 	}
 
-	/*
-	 * reutnrs an arrayList of tags
+	
+	/**
+	 * Returns an arrayList of tags
+	 * @return tags
 	 */
 	public ArrayList<Tag> getTags() {
 		return tags;
 	}
 
-	/*
-	 * returns the directions
+	
+	/**
+	 * Returns the directions
+	 * @return directions
 	 */
 	public String getDirections() {
 		return directions;
 	}
 
-	/*
-	 * returns the attribution
+	
+	/**
+	 * Returns the attribution
+	 * @return attribution
 	 */
 	public String getAttribution() {
 		return attribution;
 	}
 
-	/*
-	 * returns an arrayList of ingredients
+
+	/**
+	 * Returns an arrayList of ingredients
+	 * @return ingredients
 	 */
 	public ArrayList<Ingredient> getIngredients() {
 		return ingredients;
 	}
 
-	/*
-	 * returns the category
+
+	/**
+	 * Returns the category
+	 * @return category
 	 */
 	public Category getCategory() {
 		return category;

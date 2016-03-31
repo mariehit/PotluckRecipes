@@ -1,51 +1,68 @@
 package potluck.domain;
 
+/**
+ * This class holds all the information for tags
+ * @author Johan Setyobudi
+ *
+ */
 /*
- * holds all the information for tags
  */
 public class Tag {
 	private int id = 0;
 	private String text;
 	private static int idHelper = 0;
+
 	
-	/*
+	/**
 	 * default constructor
 	 */
 	public Tag() {
 		text = new String();
 	}
+
 	
-	/*
-	 * overloaded constructor
+	/**
+	 * Overloaded constructor
+	 * @param text
 	 */
 	public Tag(String text) {
 		id = ++idHelper;
 		this.text = text;
 	}
-	
+
 	/*
-	 * returns the id
+	 */
+	/**
+	 * Returns the id
+	 * @return id
 	 */
 	public int getTagId() {
 		return id;
 	}
-	
+
 	/*
-	 * returns the text
+	 */
+	/**
+	 * Returns the text
+	 * @return text
 	 */
 	public String getText() {
 		return text;
 	}
-	/*
-	 * sets the text
+
+	/**
+	 * Sets the text
+	 * @param text
 	 */
 	public void setText(String text) {
 		this.text = text;
 	}
-	
-	/*
+
+
+	/** 
 	 * creates a string using the information in
-	 * the class
+	 * the class	 
+	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
@@ -53,9 +70,10 @@ public class Tag {
 		string = " Tag: "+ text;
 		return string;
 	}
-	
-	/*
-	 * displays the information in the class
+
+
+	/**
+	 * Displays the information in the class
 	 */
 	public void display()
 	{
