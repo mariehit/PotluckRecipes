@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-        <servlet-name>AuthorsSummaryView</servlet-name>
-        <servlet-class>viewlayer.AuthorsSummaryView</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>CategoriesSummaryView</servlet-name>
         <servlet-class>viewlayer.CategoriesSummaryView</servlet-class>
     </servlet>
@@ -12,10 +8,34 @@
         <servlet-name>TagsSummaryView</servlet-name>
         <servlet-class>viewlayer.TagsSummaryView</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>AuthorsSummaryView</servlet-name>
-        <url-pattern>/AuthorsSummaryView</url-pattern>
-    </servlet-mapping>
+    <servlet>
+        <servlet-name>RecipesSummaryView</servlet-name>
+        <servlet-class>viewlayer.RecipesSummaryView</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CommentsSummaryView</servlet-name>
+        <servlet-class>viewlayer.CommentsSummaryView</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IngredientsSummaryView</servlet-name>
+        <servlet-class>viewlayer.IngredientsSummaryView</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RecipeTagsSummaryView</servlet-name>
+        <servlet-class>viewlayer.RecipeTagsSummaryView</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RecipeCategoriesSummaryView</servlet-name>
+        <servlet-class>viewlayer.RecipeCategoriesSummaryView</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RecipeIngredientsSummaryView</servlet-name>
+        <servlet-class>viewlayer.RecipeIngredientsSummaryView</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MembersSummaryView</servlet-name>
+        <servlet-class>viewlayer.MembersSummaryView</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CategoriesSummaryView</servlet-name>
         <url-pattern>/CategoriesSummaryView</url-pattern>
@@ -23,6 +43,34 @@
     <servlet-mapping>
         <servlet-name>TagsSummaryView</servlet-name>
         <url-pattern>/TagsSummaryView</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RecipesSummaryView</servlet-name>
+        <url-pattern>/RecipesSummaryView</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CommentsSummaryView</servlet-name>
+        <url-pattern>/CommentsSummaryView</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IngredientsSummaryView</servlet-name>
+        <url-pattern>/IngredientsSummaryView</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RecipeTagsSummaryView</servlet-name>
+        <url-pattern>/RecipeTagsSummaryView</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RecipeCategoriesSummaryView</servlet-name>
+        <url-pattern>/RecipeCategoriesSummaryView</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RecipeIngredientsSummaryView</servlet-name>
+        <url-pattern>/RecipeIngredientsSummaryView</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MembersSummaryView</servlet-name>
+        <url-pattern>/MembersSummaryView</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
