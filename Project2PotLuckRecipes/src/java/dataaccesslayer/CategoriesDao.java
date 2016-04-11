@@ -5,10 +5,16 @@
  */
 package dataaccesslayer;
 
+import java.util.List;
+import transferobjects.Category;
+
 /**
  *
  * @author Johan
  */
 public interface CategoriesDao {
+    
+    public Category getCategoriesByCategoryId(int categoryId);
+    public List<Category> getAllCategories();
     
 }
