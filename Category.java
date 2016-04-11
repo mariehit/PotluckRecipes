@@ -1,46 +1,32 @@
-package potluck.domain;
-
 /*
- * holds all the information for categories
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package transferobjects;
+
+/**
+ *
+ * @author Johan
  */
 public class Category {
-	private int category_id;
-	private CategoryName categoryName;
-	
-	/*
-	 * default constructor
-	 */
-	public Category(CategoryName categoryName) {
-		this.categoryName = categoryName;
-	}
-	/*
-	 * returns categoryName
-	 */
-	public CategoryName getCategoryName() {
-		return categoryName;
-	}
-	/*
-	 * returns categoryID
-	 */
-	public int getCategory_id() {
-		return category_id;
-	}
-	/*
-	 * prints out what category it is
-	 */
-	public void display()
-	{
-		if(categoryName == CategoryName.BAKERY)
-		{
-			System.out.println("Category: bakery");
-		}
-		if(categoryName == CategoryName.MEAT)
-		{
-			System.out.println("Category: meat");
-		}
-		if(categoryName == CategoryName.VEGE)
-		{
-			System.out.println("Category: vegie");
-		}
-	}
+    
+    private int categoryId;
+    private String categoryText;
+    
+    public void setCategoryId(int categoryId){
+        this.categoryId = categoryId;
+    }
+    
+    public void setCategoryText(String categoryText){
+        this.categoryText = categoryText;
+    }
+    
+    public int getCategoryId(){
+        return categoryId;
+    }
+    
+    public String getCategoryText(){
+        return categoryText;
+    }
 }
