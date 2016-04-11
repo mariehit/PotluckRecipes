@@ -40,9 +40,9 @@ public class CommentsSummaryView extends HttpServlet {
             out.println("<html>");
             out.println("<head>");
             //from here, my code
-            out.println("<h1>Johan Setyobudi</h1>");
-            out.println("Date: " +java.time.LocalDate.now().toString() +"<br>");
-            out.println("Time: " +java.time.LocalTime.now().toString() +"<br>");
+            out.println("<h1>Comments Servlet by Johan Setyobudi</h1>");
+//            out.println("Date: " +java.time.LocalDate.now().toString() +"<br>");
+//            out.println("Time: " +java.time.LocalTime.now().toString() +"<br>");
             out.println("<title>Johan Setyobudi</title>");   
             CommentsBusinessLogic logic = new CommentsBusinessLogic();
             List<Comments> comments = logic.getAllComments();
