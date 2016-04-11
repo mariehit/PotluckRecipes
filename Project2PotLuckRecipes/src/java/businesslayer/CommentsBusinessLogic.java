@@ -5,10 +5,30 @@
  */
 package businesslayer;
 
+import dataaccesslayer.CommentsDaoImpl;
+import java.util.List;
+import transferobjects.Comments;
+
 /**
  *
  * @author Johan
  */
 public class CommentsBusinessLogic {
+    private CommentsDaoImpl commentsDao;
     
+    public CommentsBusinessLogic() {
+        commentsDao = new CommentsDaoImpl();
+    }
+    
+    public Comments getCommentsByMemberId(int memberId) {
+        return commentsDao.getCommentByMemberId(memberId);
+    }
+    
+    public Comments getCommentsByRecipeId(int recipeId) {
+        return commentsDao.getCommentByRecipeId(recipeId);
+    }
+    
+    public List<Comments> getAllComments() {
+        return commentsDao.getAllComments();
+    }
 }
