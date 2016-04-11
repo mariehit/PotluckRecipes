@@ -5,12 +5,16 @@
  */
 package viewlayer;
 
+import businesslayer.CommentsBusinessLogic;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DecimalFormat;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import transferobjects.Comments;
 
 /**
  *
@@ -31,14 +35,30 @@ public class CommentsSummaryView extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+           /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet CommentsSummaryView</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet CommentsSummaryView at " + request.getContextPath() + "</h1>");
+            //from here, my code
+            out.println("<h1>Johan Setyobudi</h1>");
+            out.println("Date: " +java.time.LocalDate.now().toString() +"<br>");
+            out.println("Time: " +java.time.LocalTime.now().toString() +"<br>");
+            out.println("<title>Johan Setyobudi</title>");   
+            CommentsBusinessLogic logic = new CommentsBusinessLogic();
+            List<Comments> comments = logic.getAllComments();
+            out.println("<table border=\"1\">");
+            out.println("<tr>");
+            out.println("<td>Member ID</td>");
+            out.println("<td>Recipe ID</td>");
+            out.println("<td>Date Created</td>");
+            out.println("<td>Ranking</td>");
+            out.println("<td>Comment Text</td>");
+            out.println("</tr>");
+            for(Comments comment : comments){
+                out.printf("<tr><td>%d</td><td>%d</td><td>%s</td><td>%d</td><td>%s</td></tr>",
+                    comment.getMemberId(), comment.getRecipeId(), comment.getDateCreated(), comment.getRanking(), comment.getCommentText());
+            }
+            out.println("</table>");
             out.println("</body>");
             out.println("</html>");
         }
