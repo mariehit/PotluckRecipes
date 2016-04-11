@@ -5,10 +5,20 @@
  */
 package dataaccesslayer;
 
+import java.util.List;
+import transferobjects.Comments;
+
 /**
  *
  * @author Johan
  */
 public interface CommentsDao {
+    
+    public List<Comments> getAllComments();
+    
+    public Comments getCommentByMemberId(int memberId);
+    
+    public Comments getCommentByRecipeId(int recipeId);
+   
     
 }
