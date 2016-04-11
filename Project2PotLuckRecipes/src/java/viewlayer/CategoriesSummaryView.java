@@ -5,12 +5,15 @@
  */
 package viewlayer;
 
+import businesslayer.CategoriesBusinessLogic;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import transferobjects.Category;
 
 /**
  *
@@ -35,10 +38,24 @@ public class CategoriesSummaryView extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet CategoriesSummaryView</title>");            
+            out.println("<title>Categories</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet CategoriesSummaryView at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Categories");
+            out.println("<h4>Server Time:" + java.time.LocalTime.now().toString());
+            out.println("<h4>Server Date:" + java.time.LocalDate.now().toString());
+            CategoriesBusinessLogic logic = new CategoriesBusinessLogic();
+            List<Category> categories = logic.getAllCategories();
+            out.println("<table border=\"1\">");
+            out.println("<tr>");
+            out.println("<td>Category Id</td>");
+            out.println("<td>Category Text</td>");
+            out.println("</tr>");
+            for(Category category : categories){
+            out.printf("<tr><td>%d</td><td>%s</td></tr>",
+                    category.getCategoryId(), category.getCategoryText());
+            }
+            out.println("</table>");
             out.println("</body>");
             out.println("</html>");
         }
