@@ -5,10 +5,14 @@
  */
 package dataaccesslayer;
 
+import java.util.List;
+import transferobjects.Member;
+
 /**
  *
  * @author Johan
  */
-public interface MembersDao {
-    
+public interface MembersDao 
+{
+    public List<Member> getAllMembers();
 }
