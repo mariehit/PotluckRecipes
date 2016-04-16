@@ -7,7 +7,7 @@ package transferobjects;
 
 /**
  *
- * @author Johan
+ * @author Jacob
  */
 public class Category {
     
