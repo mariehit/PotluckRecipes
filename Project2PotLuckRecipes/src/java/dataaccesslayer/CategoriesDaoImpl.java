@@ -15,7 +15,7 @@ import transferobjects.Category;
 
 /**
  *
- * @author Johan
+ * @author Jacob
  */
 public class CategoriesDaoImpl implements CategoriesDao {
     
