@@ -12,6 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import businesslayer.MembersBusinessLogic;
+import transferobjects.Member;
+import java.util.List;
+
 /**
  *
  * @author Johan
@@ -35,10 +39,30 @@ public class MembersSummaryView extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet MembersSummaryView</title>");            
+            out.println("<title>Robert Lin</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet MembersSummaryView at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Members Servlet by Robert Lin</h1>");
+            MembersBusinessLogic logic = new MembersBusinessLogic();
+            List<Member> members = logic.getAllMembers();
+            out.println("<table border=\"1\">");
+            out.println("<tr>");
+            out.println("<td>Member ID</td>");
+            out.println("<td>IsAdmin</td>");
+            out.println("<td>Alias</td>");
+            out.println("<td>First Name</td>");
+            out.println("<td>Last Name</td>");
+            out.println("<td>Email</td>");
+            out.println("<td>Username</td>");
+            out.println("<td>Password</td>");
+            out.println("<td>Salt</td>");
+            out.println("</tr>");
+            for(Member member : members){
+                out.printf("<tr><td>%d</td><td>%b</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>",
+                    member.getMemberId(), member.isAdmin(), member.getAlias(), member.getFirstName(), member.getLastName(), member.getEmail(),
+                    member.getUsername(), member.getPassword(), member.getSalt());
+            }
+            out.println("</table>");
             out.println("</body>");
             out.println("</html>");
         }
