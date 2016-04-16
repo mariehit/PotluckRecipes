@@ -10,7 +10,7 @@ import transferobjects.Category;
 
 /**
  *
- * @author Johan
+ * @author Jacob
  */
 public interface CategoriesDao {
     
