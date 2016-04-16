@@ -5,10 +5,25 @@
  */
 package businesslayer;
 
+import dataaccesslayer.MembersDaoImpl;
+import transferobjects.Member;
+import java.util.List;
+
 /**
  *
  * @author Johan
  */
-public class MembersBusinessLogic {
+public class MembersBusinessLogic 
+{
+    private MembersDaoImpl membersDao;
     
+    public MembersBusinessLogic()
+    {
+        membersDao = new MembersDaoImpl();
+    }
+    
+    public List<Member> getAllMembers()
+    {
+        return membersDao.getAllMembers();
+    }
 }
